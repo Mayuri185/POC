@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+<body>
+    <div class="container" style="margin-top:20px">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="input-group">
+                    <div class="input-group-addon calender"><img src="images/icon_calender.svg" alt=""></div>
+                    <!-- <input type="date" class="form-control" id="exampleInputAmount" placeholder="Amount"> -->
+                    <input type="text" class="form-control" name="daterange" value="01/01/2018 - 01/01/2018" />
+                    <div class="input-group-addon search"><img src="images/icon_search.svg" alt=""></div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p><strong>Results: </strong><strong id="mailCount">0</strong><strong>mail(s)</strong></p>
+            </div>
+        </div>
+        <div class="imgContainer">
+            <img src="images/logo.png"/>
+        </div>
+        <div class="tableContainer list hidden-xs">
+            <table class="table srch">
+                <thead>
+                  <tr>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Date <span class="caret"><img src="images/icon_arrow01.svg"/></span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >
+                    <td width="20%" scope="row"><a href="mailto:aaa@example.com">aaa@example.com</a></td>
+                    <td width="20%"><a href="mailto:zzz.zzz@example.com">zzz.zzz@example.com</a></td>
+                    <td width="50%" class="subject" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">[ HR-888 ] Notice of official announcement</td>
+                    <td width="10%">0:20</td>
+                    <div id="collapseExample" class="collapse">
+                      <strong>[ HR-888 ] Notice of official announcement</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr>
+                    <!-- <td width=100%> -->
+                      
+                    <!-- </td> -->
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:bbb.bbbb@exam">bbb.bbbb@exam...</a></td>
+                    <td><a href="mailto:yyy@example.com">yyy@example.com</a></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">[web:333] "Web Contact"</td>
+                    <td>0:10</td>
+                    <div id="collapseExample1" class="collapse">
+                      <strong>[web:333] "Web Contact"</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:yyy@ccc@example.com">ccc@example.com</a></td>
+                    <td><a href="mailto:xxx@example.com">xxx@example.com, ...</a><span class="more">+1</span></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">Happy New Year! Greetings for the New Year. <span class="clip"><img src="images/icon_clip.svg"/></span></td>
+                    <td>0:00</td>
+                    <div id="collapseExample2" class="collapse">
+                      <strong>Happy New Year! Greetings for the New Year.</strong><span class="clip"><img src="images/icon_clip.svg"/></span>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:ddd.dddd@example.com">ddd.dddd@exam...</a></td>
+                    <td><a href="mailto:vvv.vvv@example.com">vvv.vvv@example.com, ...</a><span class="more">+1</span></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">[HR-887(Revised: Office Expansion Project Team)] Notice of off... </td>
+                    <td>Jan 01</td>
+                    <div id="collapseExample3" class="collapse">
+                      <strong>[HR-887(Revised: Office Expansion Project Team)] Notice of off...</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:eee@example.com">eee@example.com</a></td>
+                    <td><a href="mailto:sss@example.com">sss@example.com, ....</a><span class="more">+2</span></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">[Github] Logout page</td>
+                    <td>Jan 01</td>
+                    <div id="collapseExample4" class="collapse">
+                      <strong>[Github] Logout page</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:fff.ffff@example.com">fff.ffff@example.c...</a></td>
+                    <td><a href="mailto:qqq.qqq@example.com">qqq.qqq@example.com</a></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">［dev］ Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5</td>
+                    <td>Jan 01</td>
+                    <div id="collapseExample5" class="collapse">
+                      <strong>［dev］ Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:ggg@example.com">ggg@example.com</a></td>
+                    <td><a href="mailto:ppp@example.com">ppp@example.com</a></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">Re: [Github] Brush-up on loading animation</td>
+                    <td>Jan 01</td>
+                    <div id="collapseExample6" class="collapse">
+                      <strong>［Re: [Github] Brush-up on loading animation</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:hhh.hhh@example.com">hhh.hhh@examp...</a></td>
+                    <td><a href="mailto:ooo.ooo@example.com">ooo.ooo@example.com</a></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">［Workplace Summary for sample, Inc.: Jun 2 - Jun 9 <span class="clip"><img src="images/icon_clip.svg"/></span></td>
+                    <td>Jan 01</td>
+                    <div id="collapseExample7" class="collapse">
+                      <strong>［Workplace Summary for sample, Inc.: Jun 2 - Jun 9</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row"><a href="mailto:iii@example.com">iii@example.com</a></td>
+                    <td><a href="mailto:nnn@example.com">nnn@example.com</a></td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample8">I love you <span class="clip"><img src="images/icon_clip.svg"/></span></td>
+                    <td>2019/12/31</td>
+                    <div id="collapseExample8" class="collapse">
+                      <strong>I love you</strong><span class="clip"><img src="images/icon_clip.svg"/></span>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr>
+                  <tr  >
+                    <td scope="row">Pablo-Diego-...</td>
+                    <td>Pablo-Diego-José-Francisc...</td>
+                    <td  class="subject" data-toggle="collapse" data-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample9">[info:888] ABC EQUIPMENT COMPANY</td>
+                    <td>2019/12/31</td>
+                    <div id="collapseExample9" class="collapse">
+                      <strong>[info:888] ABC EQUIPMENT COMPANY</strong>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+                    </div>
+                  </tr> 
+                </tbody>
+              </table>
+        </div>
+     
+        
+       
+    </div>
+    <div class="tableContainerMobile list hidden-md hidden-lg">
+      <div class="header">
+        <strong><span style="border-right: 2px solid gray" class="item">Form  <span class="caret"><img src="images/icon_arrow01.svg"/></span></span>
+        <span style="border-right: 2px solid gray" class="item">To</span>
+        <span style="border-right: 2px solid gray" class="item">Subject</span>
+        <span class="item">Date</span></strong>
+      </div>
+     <div class="container margin-top-10">
+      <div class="row">
+        <div class="col-xs-1 padding-0">
+          <img class="mail" src="images/icon_mail_sp.svg"/>
+        </div>
+        <div class="col-xs-8 ">
+          <p class="margin-botoom-0 colorBlk"><a href="mailto:aaa@example.com"><strong>aaa@example.com</a></strong></p>
+          <p class="margin-botoom-0"><a href="mailto:zzz.zzz@example.com">zzz.zzz@example.com</a></p>
+        </div>
+        <div class="col-xs-3">
+          <p>0:22 <span><img class="left-arrow" src="images/icon_arrow02.svg"/></span></p>
+        </div>
+        <div class="col-xs-12">
+          <p  class="subject" data-toggle="collapse" data-target="#collapseMobile1" aria-expanded="false" aria-controls="collapseMobile1">[HR-888] Notice of official announcement</p>
+        </div>
+        <div id="collapseMobile1" class="collapse col-xs-12">
+          <strong>[HR-888] Notice of official announcement</strong>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 padding-0">
+          <img class="mail" src="images/icon_mail_sp.svg"/>
+        </div>
+        <div class="col-xs-8 ">
+          <p class="margin-botoom-0 colorBlk"><a href="mailto:bbb.bbbb@example.com"><strong>bbb.bbbb@example.com</strong></a></p>
+          <p class="margin-botoom-0"><a href="mailto:yyy@example.com">yyy@example.com</a></p>
+        </div>
+        <div class="col-xs-3">
+          <p>0:10 <span><img class="left-arrow" src="images/icon_arrow02.svg"/></span></p>
+        </div>
+        <div class="col-xs-12">
+          <p  class="subject" data-toggle="collapse" data-target="#collapseMobile2" aria-expanded="false" aria-controls="collapseMobile2">[web:333] "Web Contact"</p>
+        </div>
+        <div id="collapseMobile2" class="collapse col-xs-12">
+          <strong>[web:333] "Web Contact"</strong>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 padding-0">
+          <img class="mail" src="images/icon_mail_sp.svg"/>
+        </div>
+        <div class="col-xs-8 ">
+          <p class="margin-botoom-0 colorBlk"><a href="mailto:ccc@example.com"><strong>ccc@example.com</strong></a><span class="clip clip-mobile"><img src="images/icon_clip.svg"/></span></p>
+          <p class="margin-botoom-0"><a href="mailto:xxx@example.com, www.www@example.com">xxx@example.com, www.www@example.com</a> </p>
+        </div>
+        <div class="col-xs-3">
+          <p>0:00 <span><img class="left-arrow" src="images/icon_arrow02.svg"/></span></p>
+        </div>
+        <div class="col-xs-12">
+          <p  class="subject" data-toggle="collapse" data-target="#collapseMobile3" aria-expanded="false" aria-controls="collapseMobile3">Happy New Year! Greetings for the New Year.</p>
+        </div> 
+        <div id="collapseMobile3" class="collapse col-xs-12">
+          <strong>Happy New Year! Greetings for the New Year.</strong>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 padding-0">
+          <img class="mail" src="images/icon_mail_sp.svg"/>
+        </div>
+        <div class="col-xs-8 ">
+          <p class="margin-botoom-0 colorBlk"><a href="mailto:ddd.dddd@example.com"><strong>ddd.dddd@example.com</strong></a></p>
+          <p class="margin-botoom-0"><a href="mailto:vvv.vvv@example.com, uuu@example.com">vvv.vvv@example.com, uuu@example.com, ...</a></p>
+        </div>
+        <div class="col-xs-3">
+          <p>Jan 01 <span><img class="left-arrow" src="images/icon_arrow02.svg"/></span></p>
+          <span class="more">+1</span>
+        </div>
+        <div class="col-xs-12">
+          <p  class="subject" data-toggle="collapse" data-target="#collapseMobile4" aria-expanded="false" aria-controls="collapseMobile4">[ HR-888 ] Notice of official announcement</p>
+        </div>
+        <div id="collapseMobile4" class="collapse col-xs-12">
+          <strong>[ HR-888 ] Notice of official announcement</strong>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-1 padding-0">
+          <img class="mail" src="images/icon_mail_sp.svg"/>
+        </div>
+        <div class="col-xs-8 ">
+          <p class="margin-botoom-0 colorBlk"><a href="mailto:eee@example.com"><strong>eee@example.com</a></strong></p>
+          <p class="margin-botoom-0"><a href="mailto:sss@example.com, rrr.rrrr@example.com">sss@example.com, rrr.rrrr@example.com, ...</a></p>
+        </div>
+        <div class="col-xs-3">
+          <p>Jan 01 <span><img class="left-arrow" src="images/icon_arrow02.svg"/></span></p>
+          <span class="more">+1</span>
+        </div>
+        <div class="col-xs-12">
+          <p  class="subject" data-toggle="collapse" data-target="#collapseMobile5" aria-expanded="false" aria-controls="collapseMobile5">[HR-887(Revised: Office Expansion Project Tea...</p>
+        </div>
+        <div id="collapseMobile5" class="collapse col-xs-12">
+          <strong>[HR-887(Revised: Office Expansion Project Tea...</strong>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae fugiat doloremque similique animi deserunt nulla nemo in magni fuga atque mollitia quidem maiores iusto, nostrum harum voluptatem ullam quibusdam.</p>
+        </div>
+      </div>
+       
+    
+
+     </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
+          </div>
+          <div class="modal-body">
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      $(function() {
+        var view = 0;
+        $('input[name="daterange"]').daterangepicker({
+          opens: 'left'
+        }, function(start, end, label) {
+          view = 1;
+            $(".imgContainer").css("display", "none");
+            $('.list').css("display", "block");
+            $("#mailCount").text('10')
+        });
+        if(view == 0 ){
+            $(".imgContainer").css("display", "block");
+            $('.list').css("display", "none");
+            $("#mailCount").text('0')
+          } 
+          // $('.collapse').on('show.bs.collapse', function (e) {
+          //     // Get clicked element that initiated the collapse...
+          //     clicked = $(e.target).attr('id');
+          // });
+
+          // $('#myModal').on('show.bs.modal', function (event) {
+          //   var button = $(event.relatedTarget) // Button that triggered the modal
+          //   var recipient = button.text() // Extract info from data-* attributes
+          //   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          //   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          //   var modal = $(this)
+          //   //modal.find('.modal-title').text(recipient)
+          //   modal.find('.modal-body').append("<p><strong> Body of "+recipient +"</strong></p>")
+          //   modal.find('.modal-body').append("<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi omnis rerum tenetur sapiente accusantium dolores sed, soluta voluptas deserunt? Magni obcaecati quasi id aliquid nesciunt quis laudantium modi ratione laboriosam.</p>")
+          //   modal.find('.modal-body').append("<hr/>")
+          // })
+
+          // $(".subject").click(function(e){
+          //   var id = $(e.target).attr('aria-controls')
+          //   $(e.target).parent().after("<div class='collapse margin-15' id="+id+"><strong>"+$(e.target).text()+"</strong><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi omnis rerum tenetur sapiente accusantium dolores sed, soluta voluptas deserunt? Magni obcaecati quasi id aliquid nesciunt quis laudantium modi ratione laboriosam.</p></div>")
+          // })
+
+      });
+
+     
+      </script>
+</body>
+</html>
